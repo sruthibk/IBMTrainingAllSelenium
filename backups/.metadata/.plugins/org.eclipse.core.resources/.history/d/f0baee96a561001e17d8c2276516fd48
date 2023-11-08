@@ -1,0 +1,12 @@
+package basics;
+
+import org.junit.Test;
+
+public class ValidationExample {
+	
+	@Test
+	public void verifyAppTitle() {
+		System.out.println("hii");
+	}
+
+}

@@ -1,0 +1,13 @@
+package testRun;
+
+
+public class TestRunner {
+	
+	@CucumberOptions(
+			
+			features=".\\IBM_Feature\\logintest.feature",
+			glue="steps"
+			)
+	
+
+}

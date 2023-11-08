@@ -1,0 +1,38 @@
+package reqresExample;
+import org.json.simple.JSONObject;
+import org.testng.annotations.Test;
+import io.restassured.http.ContentType;
+import utility.ConstantsAPI;
+
+import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.baseURI;
+public class TC_01_VerifyCreateUserPostMethod {
+@Test
+	public void VerifyListUserTest() {
+		// TODO Auto-generated constructor stub
+	baseURI = ConstantsAPI.api_reqres_server;
+	JSONObject request = new JSONObject();
+	request.put("name", "lavanya");
+	request.put("job", "Sr.Leader");
+	
+	System.out.println("===============");
+	System.out.println(request.toJSONString());
+	System.out.println("------------");
+	given().
+		header("Content-Type","application/json").
+	when().
+	
+	 post("/api/users").
+	 then().
+
+     assertThat().
+
+     statusCode(200).
+
+ and().
+
+     contentType(ContentType.JSON);
+
+	}
+
+}

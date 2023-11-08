@@ -1,0 +1,9 @@
+package basics;
+
+public class ValidationExample {
+	
+	public void verifyAppTitle() {
+		
+	}
+
+}

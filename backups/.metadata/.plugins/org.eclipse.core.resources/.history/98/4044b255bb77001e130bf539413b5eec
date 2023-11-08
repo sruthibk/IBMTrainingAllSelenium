@@ -1,0 +1,50 @@
+package reqresExample;
+
+import org.testng.annotations.Test;
+
+import io.restassured.*;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.*;
+import static io.restassured.response.Response.*;
+import io.restassured.response.ResponseBody;
+import utility.Constants;
+
+public class TC_01_VerifyListUser2 {
+@Test
+	public void VerifyListUserTest() {
+		// TODO Auto-generated constructor stub
+		baseURI = Constants.api_reqres_server;
+		RequestSpecification httpRequest = given();
+
+		Response response = httpRequest.get("/Hyderabad");
+
+
+
+		// Retrieve the body of the Response
+
+		ResponseBody body = response.getBody()
+		
+		given().
+		
+	when().
+	
+	 get("/api/users?page=2").
+	 then().
+
+     assertThat().
+
+     statusCode(200).
+
+ and().
+
+     contentType(ContentType.JSON).
+
+ and().
+		body("x.data[0].first_name",equals("Michael"));
+		
+		
+	}
+
+}

@@ -1,0 +1,15 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+
+public class LoginPageNOP {
+
+	
+	WebDriver driver;
+	public LoginPageNOP(WebDriver driver) {
+		// TODO Auto-generated constructor stub
+		
+		this.driver = driver;
+	}
+
+}

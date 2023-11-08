@@ -1,0 +1,113 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
+public class LoginPageHRM2 {
+	
+	WebDriver driver;
+	
+	public LoginPageHRM2(WebDriver driver){
+		
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	//Identification
+@FindBy(name="username")
+    WebElement txt_user;
+
+
+    By txt_pass = By.name("password");
+
+    @FindBy(how=How.CSS,using="[type=submit]")
+    WebElement btn_login;
+    
+
+    By lnk_forgotPass = By.xpath("//p[text()='Forgot your password? ']");
+
+    By img_logo = By.className("orangehrm-login-branding");
+
+    
+
+    By dropdown_user = By.className("oxd-userdropdown-name");
+
+    By lnk_Logout = By.partialLinkText("Logo");
+
+  //methods
+
+    public void enter_user(String user) throws Exception {
+    	Thread.sleep(3000);
+
+        driver.findElement(txt_user).sendKeys(user);
+
+        
+
+    }
+
+    
+
+    public void enter_pass(String pwd) {
+
+        driver.findElement(txt_pass).sendKeys(pwd);
+
+        
+
+    }
+
+    
+
+    public void clickLoginButton() {
+
+        driver.findElement(btn_login).click();
+
+        
+
+    }
+
+    
+
+    public void clickUserDropdown() throws Exception {
+
+        driver.findElement(dropdown_user).click();
+
+        Thread.sleep(3000);
+
+        
+
+    }
+
+    public void clickLogout() {
+
+        driver.findElement(lnk_Logout).click();
+
+        
+
+    }
+
+     
+
+    public void verifyApplicationTitle(String actualTitle, String expectedTitle) throws Exception {
+
+        
+
+        Thread.sleep(3000);
+
+        Assert.assertEquals(actualTitle, expectedTitle);
+
+        
+
+    }
+
+    
+
+    
+
+    
+
+}

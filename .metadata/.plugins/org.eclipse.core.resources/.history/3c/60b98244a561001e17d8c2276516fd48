@@ -1,0 +1,10 @@
+package basics;
+
+public class ValidationExample {
+	
+	@Test
+	public void verifyAppTitle() {
+		
+	}
+
+}

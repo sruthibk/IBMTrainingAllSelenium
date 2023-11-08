@@ -1,0 +1,13 @@
+package testRun;
+
+import org.testng.annotations.Test;
+
+public class testnt {
+	
+	
+	@Test
+	public void estmn() {
+		System.out.println("test");
+	}
+
+}

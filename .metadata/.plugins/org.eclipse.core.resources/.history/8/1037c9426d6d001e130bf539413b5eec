@@ -1,0 +1,9 @@
+package pages;
+
+public class LoginPageNOP {
+
+	public LoginPageNOP() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

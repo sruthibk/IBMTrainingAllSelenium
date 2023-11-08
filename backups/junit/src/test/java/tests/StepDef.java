@@ -1,0 +1,83 @@
+package tests;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class StepDef {
+	
+	WebDriver driver;
+	
+	By txt_user = By.name("Email");
+
+    By txt_pass = By.name("Password");
+    
+    By submit_btn = By.tagName("button");
+    
+    
+    
+	@Given("User Launch Chrome browser")
+	public void user_Launch_Chrome_browser() {
+		
+		driver = new ChromeDriver();
+	    
+	}
+
+	@When("User opens URL {string}")
+	public void user_opens_URL(String url) {
+	   
+		driver.get(url);
+	}
+
+	@When("User enters Email as {string} and Password as {string}")
+	public void user_enters_Email_as_and_Password_as(String uname, String pass) {
+		
+		driver.findElement(txt_user).clear();
+		driver.findElement(txt_user).sendKeys(uname);
+		driver.findElement(txt_pass).clear();
+		driver.findElement(txt_pass).sendKeys(pass);
+		
+		
+	  
+	}
+
+	@When("Click on Login")
+	public void click_on_Login() {
+		
+		driver.findElement(submit_btn).click();
+		
+	   
+	}
+
+	@Then("Page Title should be {string}")
+	public void page_Title_should_be(String Expected) throws Exception {
+		
+		Thread.sleep(2000);
+		Assert.assertEquals(driver.getTitle(), Expected);
+	    
+	}
+
+	@When("User click on Log out link")
+	public void user_click_on_Log_out_link() throws Exception {
+		
+		driver.findElement(By.partialLinkText("Logo")).click();
+		Thread.sleep(1000);
+		
+	   
+	}
+
+	@Then("close browser")
+	public void close_browser() throws Exception {
+	
+		Thread.sleep(3000);
+		driver.close();
+		driver.quit();
+	   
+	}
+
+}

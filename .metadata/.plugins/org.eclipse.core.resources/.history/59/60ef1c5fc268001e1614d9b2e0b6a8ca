@@ -1,0 +1,33 @@
+package utility;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+public class ReadConfigFile {
+	
+	
+Static Properties prop;
+	public ReadConfigFile() throws Exception {
+	
+   FileInputStream fs =  new FileInputStream(".\\test_data\\config.properties");
+   
+   prop = new Properties();
+   prop.load(fs);
+   
+	}
+	
+public static String getURL() {
+		
+		return prop.getProperty("getURLNOP");
+	}
+public static String getUsername() {
+		
+		return prop.getProperty("unameNOP");
+	}
+
+
+
+}

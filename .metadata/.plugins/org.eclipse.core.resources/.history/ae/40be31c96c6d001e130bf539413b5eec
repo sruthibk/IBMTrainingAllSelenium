@@ -1,0 +1,16 @@
+package tests;
+
+import io.cucumber.java.Scenario;
+
+public class BaseTest {
+
+
+public void setUp(Scenario sch)
+{
+	
+	System.out.println("--------------Set Up-----------"+sch.getName());
+}
+
+}
+
+

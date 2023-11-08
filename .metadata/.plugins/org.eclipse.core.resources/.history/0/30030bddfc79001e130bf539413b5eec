@@ -1,0 +1,89 @@
+package reqresExample_static;
+
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+
+import org.json.simple.JSONObject;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.DataProvider;
+
+//import static io.restassured.RestAssured.given;
+
+import org.testng.annotations.Test;
+
+
+import static utility.constant.*;
+
+public class TC_03_verifyUpdateUser {
+	
+	
+	@Test
+	public void verifyCreateUserTest() throws Exception {
+		baseURI = "http://localhost:3000";
+		
+//		String lastname = "Mallick";
+//		String firstName = "Pooja";
+		
+		//creating a JSON request body/payload
+		
+		JSONObject request = new JSONObject();
+		request.put("last_name", "VNN");
+		request.put("first_name", "Ankith");
+		request.put("subjectId", 2);
+		
+		System.out.println("======================================");
+		System.out.println(request.toJSONString());
+		System.out.println("======================================");
+		
+		
+		given().
+		
+			//header
+		
+			header("Content-Type", "application/json").
+			//paramter
+			//auth
+			//body
+		
+			//body(request.toJSONString()).
+			
+//			{
+//			    "name": "komal",
+//			    "job": "manager"
+//			}
+//		
+		
+		when().
+			//action ----- sending a request to server ------ get/post/put/patch/delete etc......
+		
+			put("/users/95").
+		
+		
+		
+		then().
+			
+			//validation step
+			//statusCode
+			//value
+			//header
+			//value using JSON path
+		
+			//statusCode(200).
+//			body("name", equalTo(ibm_name)).
+//			body("job", equalTo(ibm_role)).
+			
+			log().all();
+		
+		
+		Thread.sleep(3000);
+	}
+	
+	
+	
+	
+	
+
+
+}

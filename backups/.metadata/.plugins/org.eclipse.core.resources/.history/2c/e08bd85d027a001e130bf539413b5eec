@@ -1,0 +1,73 @@
+package gitHUBExample;
+
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+
+import org.json.simple.JSONObject;
+
+//import static io.restassured.RestAssured.given;
+
+import org.testng.annotations.Test;
+
+
+import static utility.constant.*;
+
+public class TC_02_verifyCreateUser {
+	
+	
+	@Test
+	public void verifyCreateUserTest() {
+		baseURI = "https://api.github.com";
+		
+		String name = "New Repo Example";
+		String description = "New Repo For Testing";
+		
+		//creating a JSON request body/payload
+		
+		JSONObject request = new JSONObject();
+		request.put("name", name);
+		request.put("description", description);
+		
+		System.out.println("======================================");
+		System.out.println(request.toJSONString());
+		System.out.println("======================================");
+		
+		
+		given().
+		
+			//header
+		
+			header("Content-Type", "application/json").
+			//paramter
+			//auth
+			//body
+		
+			body(request.toJSONString()).
+			
+//			{
+//			    "name": "komal",
+//			    "job": "manager"
+//			}
+//		
+		
+		when().
+			//action ----- sending a request to server ------ get/post/put/patch/delete etc......
+		
+			post("/user/repos").
+		
+		
+		
+		then().
+			
+			//validation step
+			//statusCode
+			//value
+			//header
+			//value using JSON path
+		
+			
+			log().all();
+	}
+
+}

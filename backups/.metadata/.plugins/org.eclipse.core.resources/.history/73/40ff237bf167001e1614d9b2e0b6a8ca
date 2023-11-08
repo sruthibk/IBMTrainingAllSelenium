@@ -1,0 +1,107 @@
+package ddtExample;
+
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class NOPCommTest_dttExample extends BaseTest{
+
+	
+	
+	@Test(dataProvider="smokeTestData")
+
+	public void verifySearchFeaturewithInvalid(String uname, String pass) throws InterruptedException {
+
+		System.out.println("username "+ uname);
+		System.out.println("password "+ pass);
+		driver.findElement(By.xpath("//input[@name='Email']")).clear();	
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//input[@name=\"Email\"]")).sendKeys(uname);
+		driver.findElement(By.name("Password")).clear();
+		driver.findElement(By.name("Password")).sendKeys(pass);
+		driver.findElement(By.xpath("//button[@class='button-1 login-button']")).click();
+		Assert.assertTrue(driver.getPageSource().contains("Login was unsuccessful"),"validation fails");
+				
+
+		
+
+	}
+	
+	@DataProvider
+
+    public Object[][] smokeTestData() {
+
+        
+
+        
+
+        Object [][] data = { {"hima@google.com", "password"},{"komal@gmail.com", "password1"},{"Risab@yahoo.com", "testpass"}};
+
+        
+
+        return data;
+
+        
+
+        
+
+    }
+
+    
+
+    
+
+
+
+    @DataProvider
+
+    public Object[][] RegressionTestData() {
+
+        
+
+        
+
+        Object [][] data = { {"himaRegression@google.com", "password"},{"komalRegression@gmail.com", "password1"},{"RisabRegression@yahoo.com", "testpass"},{"ShwetaRegression@yahoo.com", "testpass"}};
+
+        
+
+        return data;
+
+        
+
+        
+
+    }
+
+    
+
+    
+
+    @DataProvider
+
+    public Object[][] RegressionTestData_excel() {
+
+        
+
+        
+
+        Object [][] data = { {"himaRegression@google.com", "password"},{"komalRegression@gmail.com", "password1"},{"RisabRegression@yahoo.com", "testpass"},{"ShwetaRegression@yahoo.com", "testpass"}};
+
+        
+
+        return data;
+
+        
+
+        
+
+    }
+
+    
+
+
+
+}
+

@@ -1,0 +1,12 @@
+package utility;
+
+public class Constants1 {
+	
+
+		public static String browserdetails="chrome";
+		public static String url="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+		public static String hrmLogin = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+
+		public static String nopComm = "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F";
+	}
+

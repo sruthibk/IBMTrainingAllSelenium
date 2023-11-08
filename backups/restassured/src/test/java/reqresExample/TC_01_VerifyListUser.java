@@ -1,0 +1,24 @@
+package reqresExample;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import utility.ConstantsAPI;
+
+public class TC_01_VerifyListUser {
+@Test
+	public void VerifyListUserTest() {
+		// TODO Auto-generated constructor stub
+		
+		Response ars = RestAssured.get(ConstantsAPI.api_reqres_server+"/api/users?page=2");
+		assertEquals(ars.getStatusCode(), 200);
+		assertTrue(ars.getContentType().contains("json"));
+		
+		
+	}
+
+}

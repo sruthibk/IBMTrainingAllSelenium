@@ -1,0 +1,69 @@
+package gitHUBExample;
+
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+
+import org.json.simple.JSONObject;
+
+//import static io.restassured.RestAssured.given;
+
+import org.testng.annotations.Test;
+
+
+import static utility.constant.*;
+
+public class TC_02_verifyDeleteRepo {
+	
+	
+	@Test
+	public void verifyCreateUserTest() {
+		baseURI = "https://api.github.com";
+		
+		String name = "New Repo Example";
+		String description = "New Repo For Testing";
+		
+		//creating a JSON request body/payload
+		
+		JSONObject request = new JSONObject();
+		request.put("name", name);
+		request.put("description", description);
+		
+		System.out.println("======================================");
+		System.out.println(request.toJSONString());
+		System.out.println("======================================");
+		
+		
+		given().
+		
+		given().auth().preemptive().
+
+        basic("tokenC", "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").
+		
+			header("Content-Type", "application/json").
+			
+		
+			body(request.toJSONString()).
+			
+
+		
+		when().
+			
+		
+			delete("/user/repos/sruthibk/{name}").
+		
+		
+		
+		then().
+			
+			//validation step
+			//statusCode
+			//value
+			//header
+			//value using JSON path
+		
+			
+			log().all();
+	}
+
+}

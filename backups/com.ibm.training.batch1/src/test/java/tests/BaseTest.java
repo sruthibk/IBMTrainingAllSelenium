@@ -1,0 +1,48 @@
+package tests;
+
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterTest;
+
+import org.testng.annotations.BeforeTest;
+
+
+import utility.Constants;
+
+
+
+
+public class BaseTest {
+
+WebDriver driver;
+
+@BeforeTest
+	public void launchapp() throws Exception {
+
+		System.out.println("===============launch application===============");
+			ChromeOptions test = new ChromeOptions();
+			test.addArguments("--headless");
+       driver = new ChromeDriver(test);
+		driver.get(Constants.hrm_app);	
+
+		driver.manage().window().maximize();		
+
+	}
+
+	
+@AfterTest
+	public void closeApp() throws Exception {
+
+		System.out.println("===============close application===============");
+
+		Thread.sleep(7000);
+
+		driver.close();
+
+	}
+
+
+
+}

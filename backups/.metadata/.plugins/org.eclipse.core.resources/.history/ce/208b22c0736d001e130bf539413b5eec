@@ -1,0 +1,24 @@
+package tests;
+
+
+
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+
+public class BaseTest {
+
+@Before
+public void setUp(Scenario sch)
+{
+	
+	System.out.println("--------------Set Up-----------"+sch.getName());
+}
+
+pubuc void closeApp() {
+	
+driver.quit();
+}
+
+}
+
+

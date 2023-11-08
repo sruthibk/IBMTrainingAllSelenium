@@ -1,0 +1,18 @@
+package testRun;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+
+@CucumberOptions(
+		
+		features = "C:\\Users\\Student\\eclipse-workspace\\com.ibm.training.cucumber\\IBM_Feature\\logintest.feature",
+		glue="steps"
+		//plugin = {"pretty", "html:target/ibm_cucumberReport.html"}
+		
+		)
+
+public class TestRunner extends AbstractTestNGCucumberTests{
+	
+	
+	
+
+}

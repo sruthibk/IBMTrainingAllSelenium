@@ -1,0 +1,74 @@
+package reqresExample_static;
+
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+
+import org.json.simple.JSONObject;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.DataProvider;
+
+//import static io.restassured.RestAssured.given;
+
+import org.testng.annotations.Test;
+
+
+import static utility.constant.*;
+
+public class TC_03_verifyUpdateUser {
+	
+	
+	@Test
+	public void verifyCreateUserTest() throws Exception {
+		baseURI = "http://localhost:3000";
+		
+
+		
+		JSONObject request = new JSONObject();
+		request.put("last_name", "MUpdate");
+		request.put("first_name", "SreyaUpdate");
+		request.put("subjectId", 3);
+//		{
+//		    "last_name": "M",
+//		    "first_name": "Sreya",
+//		    "subjectId": 2,
+//		    "id": 105
+//		}
+		
+		System.out.println("======================================");
+		System.out.println(request.toJSONString());
+		System.out.println("======================================");
+		
+		
+		given().
+		
+			//header
+		
+			header("Content-Type", "application/json").
+			
+		
+		when().
+			
+		
+			put("/users/106").
+		
+		
+		
+		then().
+			
+		
+			
+			log().all();
+		
+		
+		Thread.sleep(3000);
+	}
+	
+	
+	
+	
+	
+
+
+}
