@@ -1,0 +1,36 @@
+https://www.jenkins.io/doc/book/platform-information/support-policy-java/
+
+from Rajesh - Trainer to everyone:    9:07 AM
+
+https://builds.openlogic.com/downloadJDK/openlogic-openjdk/11.0.20+8/openlogic-openjdk-11.0.20+8-windows-x64.zip
+
+from Rajesh - Trainer to everyone:    9:16 AM
+
+
+--------------------------------------------------------------------
+execute test from command prompt
+--------------------------------------------------------------------
+Jenkins Pre-requisite:
+-----------------------
+https://www.jenkins.io/doc/book/platform-information/support-policy-java/
+    Java 11 or Java 17
+Java 11
+https://builds.openlogic.com/downloadJDK/openlogic-openjdk/11.0.20+8/openlogic-openjdk-11.0.20+8-windows-x64.zip
+Java 17
+https://builds.openlogic.com/downloadJDK/openlogic-openjdk/17.0.8+7/openlogic-openjdk-17.0.8+7-windows-x64.zip
+---------------------------------------------------------------------
+Setup jenkins --- https://www.jenkins.io/download/  
+---------------
+version: Download Jenkins 2.414.3 LTS for:
+1.) generic war file
+    
+        ----- platform independent
+        ----- run an application
+        download war file: https://get.jenkins.io/war-stable/2.414.3/jenkins.war
+        exeute jar/war file
+        -------------------
+
+from Rajesh - Trainer to everyone:    9:16 AM
+
+https://www.jenkins.io/download/  
+ java -jar jenkins.war --httpPort=9191
