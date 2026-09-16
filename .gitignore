@@ -29,3 +29,6 @@ out/
 # OS artifacts
 .DS_Store
 Thumbs.db
+
+# Vendored VS Code distribution backup (secrets-scanner noise / binary ASAR)
+backup2/Software/VSCode-win32-x64-1.82.2/
