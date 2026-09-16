@@ -1,6 +1,0 @@
-package basics;
-
-public class Constants {
-
-	String browserdetails="chrome";
-}
