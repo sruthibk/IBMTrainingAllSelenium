@@ -26,6 +26,9 @@ target/
 build/
 out/
 
+# TestNG / Surefire generated test reports — contain vendored jQuery; must not be committed
+test-output/
+
 # OS artifacts
 .DS_Store
 Thumbs.db
