@@ -96,7 +96,7 @@ under the License.
       <active>true</active>
       <protocol>http</protocol>
       <username>proxyuser</username>
-      <password>proxypass</password>
+      <password>${env.MAVEN_PROXY_PASSWORD}</password>
       <host>proxy.host.net</host>
       <port>80</port>
       <nonProxyHosts>local.net|some.host.com</nonProxyHosts>
@@ -119,7 +119,7 @@ under the License.
     <server>
       <id>deploymentRepo</id>
       <username>repouser</username>
-      <password>repopwd</password>
+      <password>${env.MAVEN_REPO_PASSWORD}</password>
     </server>
     -->
 
